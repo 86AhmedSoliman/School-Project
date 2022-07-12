@@ -1,0 +1,251 @@
+@import './variables';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "tajawal";
+    src: url(../Fonts/Tajawal-Regular.ttf);
+}
+body{
+    font-family: "tajawal",sans-serif !important;
+    background-color: $bg-color;
+}
+.section-title{
+    font-size: 36px;
+    color: $main-color;
+    margin: 30px 0;
+}
+// navbar
+nav.navbar {
+    z-index: 15;
+    background-color: #fff;
+    border: 1px solid #eee;
+    .nav-item {
+        &:not(:last-child){
+            margin-left: 5px;
+        }
+        a.nav-link {
+            color: $main-color;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 40px;
+            padding: 0 16px;
+            transition: all ease 0.5s;
+            &:hover{
+                background-color: $main-color;
+                color: $hover-color;
+            }
+            &.active{
+                background-color: $main-color;
+                color: $hover-color;
+            }
+        }
+    }
+    .navbar-brand{
+        width: 5%;
+        img {
+            width: 100%;
+        }
+    }
+}
+// About-us
+.about-us{
+        padding: 80px 0;
+        position: relative;
+        .carousel-inner {
+            width: 80%;
+            height: 400px;
+            margin: auto;
+        }
+        button{
+            width: 70px;
+            height: 70px;
+            border: 1px solid $main-color;
+            color: $main-color;
+            border-radius: 50%;
+            opacity: 1;
+            margin-top: auto;
+            margin-bottom: auto;
+            i{
+                color: $main-color;
+            }
+        }
+        .about-us-p{
+            margin-top: 20px;
+            p{
+                color: $main-color;
+                width: 80%;
+                text-align: center;
+                padding-left: 15px;
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+}
+// Our-activities
+.our-activities{
+    padding: 60px 0;
+    background-color: #fff;
+    .activity{
+        i {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            background-color: $main-color;
+            text-align: center;
+            display: block;
+            border-radius: 50%;
+        }
+        h5{
+            font-size: 21px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+        &:nth-child(odd){
+            h5{
+                text-align: right;
+                margin-right: -20px;
+            }
+        }
+        &:nth-child(even){
+            i{
+                float: left;
+            }
+            h5{
+                text-align: left;
+                margin-left: -20px;
+            }
+        }
+    }
+}
+// Media queries
+@media (max-width: 992px){
+    // About-us
+    .about-us{
+        .carousel-inner{
+            height: 300px;
+        }
+        button.carousel-control-prev{
+            margin-right: -20px;
+        }
+        button.carousel-control-next{
+            margin-left: -20px;
+        }
+    }
+    // Our-activities
+    .activity{
+        i {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+        }
+        h5{
+            font-size: 14px;
+            font-weight: bold;
+            margin: 20px 0 !important;
+        }
+        &:nth-child(odd){
+            padding-right: 125px;
+        }
+        &:nth-child(even){
+            padding-left: 125px;
+        }
+    }
+}
+@media (max-width: 768px){
+    .section-title{
+        margin: 20px 0;
+    }
+    .about-us{
+        .carousel-inner{
+            height: 200px;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+        }
+        .about-us-p{
+            margin-top: 15px;
+            p{
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+    }
+    .our-activities{
+        .activity{
+            margin-bottom: 20px;
+            &:nth-child(odd){
+                padding-right: 80px;
+            }
+            &:nth-child(even){
+                padding-left: 80px;
+            }
+        }
+    }
+}
+@media (max-width: 576px){
+    .section-title{
+        margin: 10px 0;
+    }
+    .about-us{
+        button.carousel-control-prev{
+            margin-right: -10px;
+        }
+        button.carousel-control-next{
+            margin-left: -10px;
+        }
+    }
+}
+@media (max-width: 472px){
+    .section-title{
+        font-size: 24px;
+    }
+    .about-us{
+        .about-us-title{
+            h3{
+                margin-top: 0;
+            }
+        }
+        .carousel-inner{
+            height: 150px;
+        }
+        button{
+            width: 30px;
+            height: 30px;
+        }
+        button.carousel-control-prev{
+            margin-right: 0;
+        }
+        button.carousel-control-next{
+            margin-left: 0;
+        }
+        .about-us-p{
+            margin-top: 5px;
+            p{
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    }
+    .our-activities{
+        .activity{
+            i {
+                margin-top: 30px;
+                font-size: 16px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                margin-top: 10px;
+            }
+            h5{
+                font-size: 14px;
+            }
+        }
+    }
+}
