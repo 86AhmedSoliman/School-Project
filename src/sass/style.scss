@@ -16,14 +16,42 @@ body{
 }
 .section-title{
     font-size: 36px;
+    color: #000;
+    font-weight: bold;
+    margin: 50px 0;
+}
+h5{
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #000;
+    span{
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 15px;
+    }
+}
+.details-btn{
     color: $main-color;
-    margin: 30px 0;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    padding: 0 16px;
+    margin-top: 15px;
+    transition: all ease 0.5s;
+    &:hover{
+        color: $hover-color;
+        background-color: $main-color;
+    }
 }
 // navbar
 nav.navbar {
     z-index: 15;
     background-color: #fff;
     border: 1px solid #eee;
+    z-index: 100;
     .nav-item {
         &:not(:last-child){
             margin-left: 5px;
@@ -101,11 +129,6 @@ nav.navbar {
             display: block;
             border-radius: 50%;
         }
-        h5{
-            font-size: 21px;
-            font-weight: bold;
-            margin-top: 25px;
-        }
         &:nth-child(odd){
             h5{
                 text-align: right;
@@ -121,6 +144,124 @@ nav.navbar {
                 margin-left: -20px;
             }
         }
+    }
+}
+// Our-students
+.our-students{
+    .section-title{
+        margin-bottom: 0;
+    }
+    .students-details{
+        width: 80%;
+        margin: 0 auto 80px;
+        .carousel{
+            button{
+                z-index: 20;
+                i{
+                    padding: 10px 20px;
+                    color: $main-color;
+                    border: 2px solid $main-color;
+                    border-radius: 10%;
+                }
+            }
+            .carousel-control-prev {
+                transform: translate(40%, 10%);
+            }
+            .carousel-control-next {
+                transform: translate(-40%, 10%);
+            }
+            .carousel-indicators {
+                bottom: -8px;
+                button {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    border: 1px solid $main-color;
+                    background-color: $hover-color;
+                }
+                button.active {
+                    background-color: $main-color;
+                }
+            }
+        }
+        .carousel-item {
+            min-height: 550px;
+            .carousel-caption {
+                background-color: #fff;
+                height: 100%;
+                width: 100%;
+                padding: 80px 70px 35px;
+                right: 0%;
+                top: 20%;
+                img {
+                    position: absolute;
+                    top: -10%;
+                    right: 50%;
+                    transform: translateX(50%);
+                    height: 60%;
+                    width: 60%;
+                    z-index: 10;
+                    border-radius: 10%;
+                }
+                div{
+                    position: absolute;
+                    right: 50%;
+                    bottom: 30%;
+                    transform: translateX(50%);
+                }
+            }
+        }
+    }
+}
+// Stars
+.stars{
+    .star{
+        width: 80%;
+        transform: scale(0.8);
+        transition: all 0.5s ease;
+        &:hover{
+            transform: scale(1);
+            img{
+                opacity: 1;
+            }
+        }
+        img{
+            transition: all 0.5s ease;
+            opacity: 0.7;
+        }
+    }
+}
+// Contact-us
+.contact-us .map iframe {
+    height: 200px;
+    width: 90%;
+}
+.contact-us{
+    .contact{
+        ul {
+            list-style: none;
+            padding: 30px 0;
+            li{
+                margin-bottom: 20px;
+                text-align: right;
+                padding-right: 30px;
+                i{
+                    font-size: 24px;
+                }
+                h5{
+                    display: inline;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+footer {
+    background-color: #111;
+    padding: 30px 0;
+    p {
+        font-size: 15px;
+        color: #acacac;
     }
 }
 // Media queries
@@ -144,11 +285,6 @@ nav.navbar {
             height: 50px;
             line-height: 50px;
         }
-        h5{
-            font-size: 14px;
-            font-weight: bold;
-            margin: 20px 0 !important;
-        }
         &:nth-child(odd){
             padding-right: 125px;
         }
@@ -156,11 +292,38 @@ nav.navbar {
             padding-left: 125px;
         }
     }
+    // Our-students
+    .our-students{
+        overflow-x: hidden;
+        .students-details{
+            width: 100%;
+        }
+    }
+    .stars{
+        .star{
+            width: 100%;
+        }
+    }
+    .contact-us{
+        .contact{
+            ul {
+                li{
+                    padding-right: 10px;
+                    i{
+                        font-size: 18px;
+                    }
+                    h5{
+                        font-size: 18px;
+                        span{
+                            font-size: 16;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media (max-width: 768px){
-    .section-title{
-        margin: 20px 0;
-    }
     .about-us{
         .carousel-inner{
             height: 200px;
@@ -188,11 +351,45 @@ nav.navbar {
             }
         }
     }
+    .our-students{
+        .students-details{
+            width: 90%;
+            .carousel-item {
+            min-height: 450px;
+                img{
+                    height: 50% !important;
+                    width: 50% !important;
+                }
+            }
+            .carousel{
+                button{
+                    i{
+                        padding: 5px 10px;
+                    }
+                }
+            }
+        }
+    }
+    .stars{
+        .star{
+            width: 90%;
+            transform: scale(1);
+            img{
+                opacity: 1;
+            }
+        }
+    }
+    .contact-us{
+        .contact{
+            ul {
+                li{
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 @media (max-width: 576px){
-    .section-title{
-        margin: 10px 0;
-    }
     .about-us{
         button.carousel-control-prev{
             margin-right: -10px;
@@ -245,6 +442,33 @@ nav.navbar {
             }
             h5{
                 font-size: 14px;
+            }
+        }
+    }
+    .our-students{
+        .students-details{
+            .carousel-item {
+                min-height: 350px;
+                .carousel-caption{
+                    padding: 60px 40px 35px !important;
+                    img{
+                        height: 50% !important;
+                        width: 50% !important;
+                    }
+                    h5{
+                        font-size: 16px;
+                        margin-top: 10px;
+                        span{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .carousel{
+                button.carousel-control-next,
+                button.carousel-control-prev{
+                    opacity: 0;
+                }
             }
         }
     }

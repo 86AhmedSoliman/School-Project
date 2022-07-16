@@ -5,3 +5,4 @@ import 'popper.js/dist/popper.min';
 import './sass/style.scss';
 import 'normalize.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+document.getElementById('fullYear').innerHTML = new Date().getFullYear();
