@@ -1,4 +1,5 @@
 @import './variables';
+@import './student.scss';
 
 
 * {
@@ -10,7 +11,7 @@
     font-family: "tajawal";
     src: url(../Fonts/Tajawal-Regular.ttf);
 }
-body{
+body.main{
     font-family: "tajawal",sans-serif !important;
     background-color: $bg-color;
 }

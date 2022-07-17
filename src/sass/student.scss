@@ -1,0 +1,144 @@
+
+body.s1{
+    background-color: $s1-bg;
+}
+body.s2{
+    background-color: $s2-bg;
+}
+.overview{
+    z-index: 100;
+    position: relative;
+    margin-bottom: 80px;
+    .student-img{
+        width: 50%;
+        img{
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .info{
+        ul{
+            margin: 50px 20px;
+        }
+    }
+}
+.sub1{
+    background-color: $s1-secondary;
+    &::before,
+    &::after{
+        background: $s1-bg;
+    }
+}
+.sub2{
+    background-color: $s2-secondary;
+    &::before,
+    &::after{
+        background: $s2-bg;
+    }
+}
+.subjects{
+    width: 100% !important;
+    margin-bottom: 0;
+    position: relative;
+    &::before,
+    &::after{
+        content: "";
+        position: absolute;
+        top: -10%;
+        height: 200px;
+        right: 0;
+        left: 0;
+        transform: skewY(-6deg);
+    }
+    table{
+        z-index: 100;
+        background-color: #fff;
+        position: relative;
+        top: -100px;
+        width: 70%;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 40%) !important;
+        th{
+            font-size: 21px;
+            
+            &:first-child{
+                border-left: 2px solid #eee;
+            }
+        }
+        td{
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+            &:first-child{
+                border-left: 2px solid #eee;
+            }
+        }
+    }
+    .advices{
+        .advices-content{
+            margin: 50px 0;
+            .section-title{
+                font-size: 30px;
+                line-height: 36px;
+                color: #fff;
+            }
+            ul{
+                li{
+                    margin: 50px 0;
+                    color: #fff;
+                    h5{
+                        margin: 20px 0;
+                        font-size: 21;
+                        color: #fff;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            bottom: -10px;
+                            width: 65px;
+                            height: 3px;
+                            background-color: #fff;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    table{
+        width: 90% !important;
+        th{
+            font-size: 18px !important;
+        }
+        td{
+            font-size: 14px !important;
+        }
+    }
+    // .advices{
+    //     .advices-content{
+    //         .student1{
+    //             li{
+    //                 margin: 50px 0;
+    //                 color: #eee;
+    //                 h5{
+    //                     margin: 20px 0;
+    //                     font-size: 21;
+    //                     color: #eee;
+    //                 }
+    //                 p{
+    //                     font-size: 18px;
+    //                     line-height: 24px;
+    //                     color: #eee;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}

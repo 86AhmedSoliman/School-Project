@@ -84,5 +84,15 @@ module.exports= {
             template: './src/index.html',
             inject: 'body'
         }),
+        new HtmlWebPackPlugin({
+            filename: 'student1.html',
+            template: './src/student1.html',
+            inject: 'body'
+        }),
+        new HtmlWebPackPlugin({
+            filename: 'student2.html',
+            template: './src/student2.html',
+            inject: 'body'
+        }),
     ]
 }
