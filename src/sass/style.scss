@@ -47,12 +47,12 @@ h5{
         background-color: $main-color;
     }
 }
+
 // navbar
 nav.navbar {
-    z-index: 15;
+    z-index: 30;
     background-color: #fff;
     border: 1px solid #eee;
-    z-index: 100;
     .nav-item {
         &:not(:last-child){
             margin-left: 5px;
@@ -257,6 +257,96 @@ nav.navbar {
         }
     }
 }
+.overlay-form{
+    background-color: rgba(53, 58, 95, 0.8);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 50;
+    padding: 5% 10%;
+    opacity: 1;
+    margin-top: -100vh;
+    transition: 1s all ease;
+    i#close{
+        font-size: 28px;
+        display: block;
+        color: $hover-color;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        cursor: pointer;
+        transition: all ease 0.2s;
+        &:hover{
+            transform: scale(1.06);
+        }
+    }
+    .sign-up-form, .sign-in-form{
+        background-color: #fff;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+        margin-top: 20px;
+        height: 80vh;
+        width: 55%;
+        z-index: 10;
+        transition: all ease 0.8s;
+        i{
+            color: $main-color;
+            position: absolute;
+            right: 5%;
+            cursor: pointer;
+        }
+        .form-inline{
+            justify-content: space-between;
+        }
+        .form-text {
+            h3 {
+                font-size: 24px;
+                color: #181c1c;
+                font-weight: bold;
+            }
+        }
+        input, select{
+            text-align: right;
+            &:focus{
+                outline: none;
+                box-shadow: none;
+                border: 1px solid #999;
+            }
+        }
+        button {
+            background-color: $main-color;
+            font-size: 15px;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 3px;
+            width: auto;
+            margin-right: 12px;
+            border: 0;
+        }
+        .account{
+            float: left;
+            margin-top: 5px;
+        }
+    }
+    .remove-sign-up{
+        transform: translateX(195%);
+        opacity: 0;
+    }
+    .show-sign-in{
+        transform: translate(0, -104%) !important;
+        opacity: 1;
+    }
+    .remove-sign-in{
+        transform: translate(-200%, -104%);
+        opacity: 0;
+    }
+}
+.show-overlay{
+    margin-top: 0;
+}
 footer {
     background-color: #111;
     padding: 30px 0;
@@ -322,6 +412,9 @@ footer {
                 }
             }
         }
+    }
+    .sign-up-form, .sign-in-form{
+        width: 90% !important;
     }
 }
 @media (max-width: 768px){
@@ -389,6 +482,29 @@ footer {
             }
         }
     }
+    .overlay-form{
+        .sign-in-form{
+            height: 85vh;
+            margin-top: 5%;
+        }
+        .sign-up-form{
+            height: 85vh;
+            margin-top: 5%;
+            
+            .form-inline{
+                label{
+                    width: 100%;
+                    justify-content: flex-start;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .was-validated {
+            select.form-control:valid, select.form-control.is-valid{
+                padding-left: 1.5rem !important;
+            }
+        }
+    }
 }
 @media (max-width: 576px){
     .about-us{
@@ -397,6 +513,12 @@ footer {
         }
         button.carousel-control-next{
             margin-left: -10px;
+        }
+    }
+    .overlay-form{
+        .sign-in-form{
+            height: 85vh;
+            margin-top: 5%;
         }
     }
 }
