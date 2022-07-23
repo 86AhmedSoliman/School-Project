@@ -7,6 +7,9 @@ import 'normalize.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
+
+
+
 $(function(){
     $("#account").click(function(){
         $(".sign-up-form").addClass("remove-sign-up");
@@ -20,10 +23,13 @@ $(function(){
         $(".sign-in-form").removeClass("show-sign-in");
     });
     $("#overlay").click(function(){
-        $(".overlay-form").addClass("show-overlay")
+        $(".overlay-form").addClass("show-overlay");
+        $("body.main").css("overflow-y", "hidden");
+        $(".overlay-form").css("overflow-y", "scroll");
     });
     $("#close").click(function(){
-        $(".overlay-form").removeClass("show-overlay")
+        $(".overlay-form").removeClass("show-overlay");
+        $("body.main").css("overflow-y", "scroll");
     })
 });
 
@@ -43,6 +49,15 @@ $(function(){
         }, false)
     })
 })();
+let myForm = document.querySelector("form.sign-up-form");
+let myButton = myForm.querySelector("button[type=submit]");
+myButton.addEventListener("click", function(){
+    let yearSelect = document.getElementById("year-dropdown");
+    let year = yearSelect.value;
+    if(year >= 2012){
+        yearSelect.setCustomValidity('any error!!');
+    }
+});
 
 document.getElementById('fullYear').innerHTML = new Date().getFullYear();
 
@@ -58,3 +73,5 @@ while (currentYear >= earliestYear) {
     dateDropdown.add(dateOption);      
     currentYear -= 1;    
 }
+
+

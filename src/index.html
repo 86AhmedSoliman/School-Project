@@ -286,7 +286,7 @@
             <div class="col-12 mb-3">
                 <div class="form-inline">
                         <label>تاريخ الميلاد</label>
-                        <select class="form-control" name="year-dropdown" id="year-dropdown">
+                        <select class="form-control" name="year-dropdown" id="year-dropdown" requrired>
                         </select>
                         <select class="form-control" name="month">
                             <option value="01">January</option>
@@ -335,6 +335,9 @@
                             <option value="30">30</option>
                             <option value="31">31</option>
                         </select>
+                        <div class="invalid-feedback">
+                            لا يسمح لمن هم أقل من 10 سنوات
+                        </div>
                     </div>
                 </div>
             </div>
