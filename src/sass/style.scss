@@ -269,7 +269,7 @@ nav.navbar {
     opacity: 1;
     margin-top: -100vh;
     transition: 1s all ease;
-    overflow-x: hidden;
+    overflow: hidden !important;
     i#close{
         font-size: 28px;
         display: block;
@@ -521,7 +521,7 @@ footer {
             height: auto;
         }
         .sign-in-form{
-            height: 85vh;
+            height: 80vh;
             margin-top: 5%;
         }
     }
@@ -597,6 +597,15 @@ footer {
                     opacity: 0;
                 }
             }
+        }
+    }
+    .overlay-form{
+        .sign-up-form{
+            margin-top: 15%;
+        }
+        .sign-in-form{
+            height: 70vh;
+            margin-top: 10%;
         }
     }
 }
