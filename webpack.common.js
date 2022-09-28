@@ -37,7 +37,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|svg|jpe?g|gif)$/,
+                test: /\.(png|jpe?g|gif)$/i,
                 exclude: /fonts/, 
                 use: [
                     {
